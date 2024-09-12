@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\opcuaTest1.Client.props" />
+</Project>

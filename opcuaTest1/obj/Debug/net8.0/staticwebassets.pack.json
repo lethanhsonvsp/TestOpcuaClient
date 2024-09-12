@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\letha\\OneDrive\\BL\\opcuaTest1\\opcuaTest1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\opcuaTest1.bundle.scp.css",
+      "PackagePath": "staticwebassets\\opcuaTest1.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\letha\\OneDrive\\BL\\opcuaTest1\\opcuaTest1\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\letha\\OneDrive\\BL\\opcuaTest1\\opcuaTest1\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\letha\\OneDrive\\BL\\opcuaTest1\\opcuaTest1\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\letha\\OneDrive\\BL\\opcuaTest1\\opcuaTest1\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.opcuaTest1.props",
+      "PackagePath": "build\\opcuaTest1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.opcuaTest1.props",
+      "PackagePath": "buildMultiTargeting\\opcuaTest1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.opcuaTest1.props",
+      "PackagePath": "buildTransitive\\opcuaTest1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.opcuaTest1.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,76 @@
+﻿@page "/"
+@using Opc.Ua
+
+@inject OpcUaClientService OpcUaClientService
+@rendermode InteractiveServer
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+<h3>Robot Data</h3>
+
+<button @onclick="GetRobotPoseXValue">Get RobotPoseX</button>
+<p>RobotPoseX: @robotPoseX</p>
+
+<h3>Robot Control</h3>
+
+<!-- Nhóm 1: Phương thức không có tham số đầu vào -->
+<button @onclick="StartMapping">Start Mapping</button>
+<button @onclick="StopMapping">Stop Mapping</button>
+
+<!-- Nhóm 2: Phương thức có tham số đầu vào đơn -->
+<input type="text" @bind="mapName" placeholder="Enter Map Name" />
+<button @onclick="ActivateMap">Activate Map</button>
+
+<!-- Nhóm 3: Phương thức di chuyển với nhiều tham số -->
+<h4>Move To Node</h4>
+<input type="number" @bind="moveX" placeholder="X coordinate" />
+<input type="number" @bind="moveY" placeholder="Y coordinate" />
+<input type="number" @bind="moveYaw" placeholder="Yaw" />
+<input type="number" @bind="moveVmax" placeholder="Vmax" />
+<input type="number" @bind="moveAccuracy" placeholder="Accuracy" />
+<button @onclick="MoveToNode">Move To Node</button>
+
+@code {
+    private object? robotPoseX;
+    private string mapName = string.Empty;
+    private double moveX, moveY, moveYaw, moveVmax, moveAccuracy;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await OpcUaClientService.StartAsync();
+    }
+
+    private void GetRobotPoseXValue()
+    {
+        robotPoseX = OpcUaClientService.RobotPoseX;
+    }
+
+    private void StartMapping()
+    {
+        OpcUaClientService.StartMapping();
+    }
+
+    private void StopMapping()
+    {
+        OpcUaClientService.StopMapping();
+    }
+
+    private void ActivateMap()
+    {
+        if (!string.IsNullOrWhiteSpace(mapName))
+        {
+            OpcUaClientService.ActivateMap(mapName);
+        }
+    }
+
+    private void MoveToNode()
+    {
+        OpcUaClientService.MoveToNode(moveX, moveY, moveYaw, moveVmax, moveAccuracy);
+    }
+
+    public void Dispose()
+    {
+        OpcUaClientService.Stop();
+    }
+}

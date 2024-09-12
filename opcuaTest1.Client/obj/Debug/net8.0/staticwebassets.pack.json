@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\letha\\OneDrive\\BL\\opcuaTest1\\opcuaTest1.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\Users\\letha\\OneDrive\\BL\\opcuaTest1\\opcuaTest1.Client\\obj\\Debug\\net8.0\\compressed\\oc16e29xbh.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\Users\\letha\\OneDrive\\BL\\opcuaTest1\\opcuaTest1.Client\\wwwroot\\appsettings.Development.json",
+      "PackagePath": "staticwebassets\\appsettings.Development.json"
+    },
+    {
+      "Id": "C:\\Users\\letha\\OneDrive\\BL\\opcuaTest1\\opcuaTest1.Client\\wwwroot\\appsettings.json",
+      "PackagePath": "staticwebassets\\appsettings.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.opcuaTest1.Client.props",
+      "PackagePath": "build\\opcuaTest1.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.opcuaTest1.Client.props",
+      "PackagePath": "buildMultiTargeting\\opcuaTest1.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.opcuaTest1.Client.props",
+      "PackagePath": "buildTransitive\\opcuaTest1.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.opcuaTest1.Client.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
