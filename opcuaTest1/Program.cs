@@ -12,23 +12,6 @@ builder.Services.AddSingleton<OpcUaClientService>();
 
 var app = builder.Build();
 
-//using (var scope = app.Services.CreateScope())
-//{
-//    var opcUaClientService = scope.ServiceProvider.GetRequiredService<OpcUaClientService>();
-
-//    await opcUaClientService.StartAsync();
-
-//    var robotPoseX = opcUaClientService.GetRobotPoseX();
-
-//    Console.WriteLine($"RobotPoseX: {robotPoseX}");
-
-//    var robotPoseY = opcUaClientService.GetRobotPoseY();
-//    Console.WriteLine($"RobotPoseY: {robotPoseY}");
-
-//    var robotPoseYaw = opcUaClientService.GetRobotPoseYaw();
-//    Console.WriteLine($"RobotPoseYaw: {robotPoseYaw}");
-//}
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("opcuaTest1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ce4f661f51cb98976e12319958d0dd50e7c5577")]
 [assembly: System.Reflection.AssemblyProductAttribute("opcuaTest1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("opcuaTest1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

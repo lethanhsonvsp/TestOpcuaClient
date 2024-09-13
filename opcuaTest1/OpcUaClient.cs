@@ -98,7 +98,7 @@ public class OpcUaClient
         new ConfiguredEndpoint(null, endpoint),
         false, "OPC UA Client Session",
         60000,
-        new UserIdentity(new AnonymousIdentityToken()),
+        null,
         null);
 
         //Console.WriteLine("Session created successfully.");
@@ -116,7 +116,8 @@ public class OpcUaClient
     }
     #endregion
 
-    #region Subscription and Data Monitoring 
+    #region Subscription and Data Monitoring
+    
     private void CreateSubscription()
     {
         if (_session == null) throw new InvalidOperationException("Session is not established.");
@@ -138,7 +139,15 @@ public class OpcUaClient
         }
 
         subscription.AddItems(monitoredItems);
+
+        foreach (var item in methodMonitoredItems)
+        {
+            item.Notification += OnMonitoredItemNotification;
+        }
+        subscription.AddItems(methodMonitoredItems);
+
         subscription.ApplyChanges();
+
     }
 
     private List<MonitoredItem> CreateMonitoredItems(Subscription subscription)
@@ -174,6 +183,7 @@ public class OpcUaClient
 
         return items;
     }
+
 
     private List<MonitoredItem> CreateMethodMonitoredItems(Subscription subscription)
     {
@@ -257,7 +267,6 @@ public class OpcUaClient
 
     private bool IsNoInputMethod(string methodName)
     {
-        // Phương thức không có tham số
         var noInputMethods = new HashSet<string>
     {
         "StartMapping", "StopMapping", "StartLocalization", "StopLocalization",
@@ -268,7 +277,6 @@ public class OpcUaClient
 
     private bool IsSingleInputMethod(string methodName)
     {
-        // Phương thức có một tham số đầu vào
         var singleInputMethods = new HashSet<string>
     {
         "ActivateMap", "SetInitialPose", "MoveStraight", "Rotate", "CancelNavigation"
@@ -278,13 +286,13 @@ public class OpcUaClient
 
     private bool IsMovementMethod(string methodName)
     {
-        // Phương thức di chuyển có nhiều tham số
         var movementMethods = new HashSet<string>
     {
         "MoveToNode", "DockToShelf", "DropTheShelf", "DockToCharger", "UndockFromCharger"
     };
         return movementMethods.Contains(methodName);
     }
+
     private List<object> GetSingleInputArguments(string methodName)
     {
         switch (methodName)
@@ -329,12 +337,11 @@ public class OpcUaClient
         // Create the method to call request
         CallMethodRequest request = new CallMethodRequest()
         {
-            ObjectId = ObjectIds.ObjectsFolder,  // This should be the NodeId of the object that contains the method
+            ObjectId = ObjectIds.ObjectsFolder, 
             MethodId = methodId,
             InputArguments = inputArguments.Select(a => new Variant(a)).ToArray()
         };
 
-        // Call the method on the server
         CallMethodResultCollection results;
         DiagnosticInfoCollection diagnosticInfos;
 
@@ -344,14 +351,12 @@ public class OpcUaClient
         out results,
         out diagnosticInfos);
 
-        // Check if the call was successful
         if (StatusCode.IsBad(results[0].StatusCode))
         {
             Console.WriteLine($"Error calling method: {results[0].StatusCode}");
             return results[0].StatusCode;
         }
 
-        // Copy the output arguments
         for (int i = 0; i < results[0].OutputArguments.Count; i++)
         {
             outputArguments[i] = results[0].OutputArguments[i].Value;

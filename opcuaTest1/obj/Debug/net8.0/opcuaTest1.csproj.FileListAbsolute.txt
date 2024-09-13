@@ -62,3 +62,4 @@ C:\Users\letha\OneDrive\BL\opcuaTest1\opcuaTest1\obj\Debug\net8.0\refint\opcuaTe
 C:\Users\letha\OneDrive\BL\opcuaTest1\opcuaTest1\obj\Debug\net8.0\opcuaTest1.pdb
 C:\Users\letha\OneDrive\BL\opcuaTest1\opcuaTest1\obj\Debug\net8.0\opcuaTest1.genruntimeconfig.cache
 C:\Users\letha\OneDrive\BL\opcuaTest1\opcuaTest1\obj\Debug\net8.0\ref\opcuaTest1.dll
+C:\Users\letha\OneDrive\BL\opcuaTest1\opcuaTest1\obj\Debug\net8.0\opcuaTest1.sourcelink.json
